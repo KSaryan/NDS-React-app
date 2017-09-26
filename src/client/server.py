@@ -64,10 +64,29 @@ def save_need():
 def show_needs():
     """Get all needs"""
     needs = Need.query.all()
-    needs = [{'src': need.need_src, 'text': need.need_description} for need in needs]
+    needs = [{'need_id': need.need_id, 'src': need.need_src, 'text': need.need_description} for need in needs]
     result = {'needs': needs}
     return jsonify(result)
 
+
+@app.route('/get_current_needs.json')
+def show_current_needs():
+    """Get all needs"""
+    needs = Need.query.filter_by(donated=False).all()
+    needs = [{'need_id': need.need_id, 'src': need.need_src, 'text': need.need_description} for need in needs]
+    result = {'needs': needs}
+    return jsonify(result)
+
+
+@app.route('/donate_item', methods=["POST"])
+def donate():
+    """Get all needs"""
+
+    need_id = int(request.form.get('itemId'))
+    print need_id
+    need = Need.query.get(need_id)
+    need.donated = True
+    db.session.commit()
 
   
 if __name__ == "__main__":

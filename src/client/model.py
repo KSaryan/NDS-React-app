@@ -12,6 +12,7 @@ class Need(db.Model):
     need_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     need_description = db.Column(db.String(100), nullable=False)
     need_src = db.Column(db.String(5000))
+    donated = db.Column(db.Boolean, default=False)
 
     def __repr__ (self):
         """Displayed when called"""
