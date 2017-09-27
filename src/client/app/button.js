@@ -15,7 +15,7 @@ export class Button extends React.Component{
 	}
 
 	render(){
-		return( <button onClick={this.handleSave}>Donate</button>
+		return( <button style = {this.props.styles} onClick={this.handleSave}>Donate</button>
 			);
 	}
 

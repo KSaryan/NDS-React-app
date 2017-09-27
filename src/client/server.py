@@ -53,6 +53,8 @@ def save_need():
     """Saves new need"""
 
     src = request.args.get('src')
+    if src == '':
+        src = None
     text = request.args.get('text')
     need = Need(need_description=text, need_src=src)
     db.session.add(need)
@@ -64,7 +66,10 @@ def save_need():
 def show_needs():
     """Get all needs"""
     needs = Need.query.all()
-    needs = [{'need_id': need.need_id, 'src': need.need_src, 'text': need.need_description} for need in needs]
+    needs = [{'need_id': need.need_id, 
+              'src': need.need_src, 
+              'text': need.need_description, 
+              'donated': need.donated} for need in needs]
     result = {'needs': needs}
     return jsonify(result)
 
@@ -73,7 +78,7 @@ def show_needs():
 def show_current_needs():
     """Get all needs"""
     needs = Need.query.filter_by(donated=False).all()
-    needs = [{'need_id': need.need_id, 'src': need.need_src, 'text': need.need_description} for need in needs]
+    needs = [{'need_id': need.need_id, 'src': need.need_src, 'text': need.need_description, 'donated': False} for need in needs]
     result = {'needs': needs}
     return jsonify(result)
 
@@ -83,7 +88,6 @@ def donate():
     """Get all needs"""
 
     need_id = int(request.form.get('itemId'))
-    print need_id
     need = Need.query.get(need_id)
     need.donated = True
     db.session.commit()

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Donate} from './donate.js';
+import {Need} from './need.js';
 
 export class DonationPage extends React.Component{
   constructor(props) {
@@ -30,7 +30,7 @@ export class DonationPage extends React.Component{
 
     render(){
       return(<div>
-              <Donate needs={this.state.needs} donateItem={this.donateItem} getNeeds ={this.getInitialNeeds}/>
+              <Need needs={this.state.needs} donateItem={this.donateItem} getNeeds ={this.getInitialNeeds}/>
             </div>)
     }
   }

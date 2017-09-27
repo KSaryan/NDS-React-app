@@ -16,15 +16,15 @@ export class Input extends React.Component{
 
 	handleSave(e){
 		e.preventDefault();
-		this.props.addNeed(this.state.src, this.state.text);
+		this.props.addNeed(this.state.src, this.state.text, 'inline-block');
 	}
 
 	render(){
 		return(
-			<form onSubmit={this.handleSave}>
+			<form >
 				<input type='text' name="text"  onChange={this.handleChange}/>
 				<input type='src' name="src"  onChange={this.handleChange}/>
-				<input type= 'submit' value='Preview' />
+				<input type= 'submit' value='Preview'  onClick={this.handleSave}/>
 			</form>
 		)
 
