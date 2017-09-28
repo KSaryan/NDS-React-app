@@ -24,7 +24,7 @@ Also, you will need to install PostgreSQL (Mac OSX)
 Clone or fork this repo:
 
 ```
-https://github.com/KSaryan/SF-Street-Cheat
+https://github.com/KSaryan/NDS-React-app
 ```
 
 Create and activate a virtual environment inside your SF StreetCheat directory:
