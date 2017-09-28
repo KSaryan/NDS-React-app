@@ -48,11 +48,12 @@ Set up the database:
 createdb naxtdoorneeds
 ```
 ```
+cd src/client
+```
+```
 python model.py
 ```
-```
-python seed.py
-``` 
+
 
 Run the app:
 
