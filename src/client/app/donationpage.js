@@ -1,5 +1,6 @@
 import React from 'react';
 import {Need} from './need.js';
+import {Link} from 'react-router-dom';
 
 export class DonationPage extends React.Component{
   constructor(props) {
@@ -30,6 +31,11 @@ export class DonationPage extends React.Component{
 
     render(){
       return(<div>
+              <Link to={'/login'}>
+                  <h3> Login </h3>
+              </Link>
+              <h1>Things We Need</h1>
+              <h2>Simply click donate to donate an item</h2>
               <Need needs={this.state.needs} donateItem={this.donateItem} getNeeds ={this.getInitialNeeds}/>
             </div>)
     }

@@ -10,9 +10,9 @@ export class Need extends React.Component{
 
 		       	if (need.donated==false){
 		         return (
-		         <div>
-		         	{need.text}
-		           <img src={need.src} style={{height: 100}}></img>
+		         <div key={need.need_id}>
+		            <h3> We need: {need.text} </h3><br />
+		           <img src={need.src} style={{height: 100}}></img><br />
 		           <Button styles= {this.props.styles} need_id={need.need_id} donateItem={this.props.donateItem} getNeeds =
 		           {this.props.getNeeds} />
 		          </div>
@@ -22,9 +22,9 @@ export class Need extends React.Component{
 		      else{
 
 				return (
-		         <div>
-		         	{need.text}
-		           <img src={need.src} style={{height: 100, opacity: "0.5"}}></img>
+		         <div key={need.need_id}>
+		         	<h3> We need: {need.text} </h3><br />
+		           <img src={need.src} style={{height: 100, opacity: "0.5"}}></img><br />
 		           <Button styles= {this.props.styles} need_id={need.need_id} donateItem={this.props.donateItem} getNeeds =
 		           {this.props.getNeeds} />
 		          </div>

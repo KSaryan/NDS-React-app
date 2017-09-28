@@ -9,7 +9,7 @@ export class Button extends React.Component{
 
 	handleSave(e){
 		e.preventDefault();
-		alert(this.props.need_id);
+		alert('Great! Bring your donation to Next Door Shelter at 123 Main St. Thank you for donating!');
 		this.props.donateItem(this.props.need_id);
 		this.props.getNeeds();
 	}

@@ -22,8 +22,14 @@ export class Input extends React.Component{
 	render(){
 		return(
 			<form >
-				<input type='text' name="text"  onChange={this.handleChange}/>
-				<input type='src' name="src"  onChange={this.handleChange}/>
+				<label>
+					What do you need?
+					<input type='text' name="text" id="text" onChange={this.handleChange}/>
+				</label><br />
+				<label>
+					Add an image
+					<input type='text' name="src"  id="src" onChange={this.handleChange}/>
+				</label><br />
 				<input type= 'submit' value='Preview'  onClick={this.handleSave}/>
 			</form>
 		)

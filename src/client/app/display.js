@@ -28,7 +28,6 @@ export class Display extends React.Component {
 }
 
   	render() {
-  		console.log(this.state)
     	return (
       	<div id='display'>
       		<div> {this.state.text} </div>

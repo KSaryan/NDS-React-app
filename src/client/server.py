@@ -78,7 +78,10 @@ def show_needs():
 def show_current_needs():
     """Get all needs"""
     needs = Need.query.filter_by(donated=False).all()
-    needs = [{'need_id': need.need_id, 'src': need.need_src, 'text': need.need_description, 'donated': False} for need in needs]
+    needs = [{'need_id': need.need_id, 
+             'src': need.need_src, 
+             'text': need.need_description, 
+             'donated': False} for need in needs]
     result = {'needs': needs}
     return jsonify(result)
 
@@ -91,6 +94,20 @@ def donate():
     need = Need.query.get(need_id)
     need.donated = True
     db.session.commit()
+
+@app.route('/login.json')
+def login():
+    """Get all needs"""
+
+    name = request.args.get('name')
+    password = request.args.get('password')
+    #since this is just a practice app, I hardcoded in the username and password
+    #For an actual app, I would make a call to the database
+    if name == 'NDS' and password  == 'Libris':
+        result = {'success': 'True'}
+    else:
+        result = {'success': 'False'}
+    return jsonify(result)
 
   
 if __name__ == "__main__":
