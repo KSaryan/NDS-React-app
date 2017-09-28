@@ -1,5 +1,5 @@
 # React App for Next Door Shelter
-
+This a practice app I made in order to get more comfortable with React. It is a mock donation site for Next Door Shelter, where people can come see what the shelter needs and sign up to donate those items, and employees can add items they need for the shelter. Obviously, it had not been styled. 
 
 ## Contents
 * [Technologies](#technologies)
