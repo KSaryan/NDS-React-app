@@ -56,14 +56,16 @@ python model.py
 
 
 ## <a name="start"></a>Sart & Watch
+```
+npm start
+```
 
-    $ npm start
-    
-    In another terminal:
-    ```
-    cd NDS-React-app
-    source env/bin/activate
-    cd src/client
-    python server.py
-    ```
+In another terminal:
+```
+cd NDS-React-app
+source env/bin/activate
+cd src/client
+python server.py
+```
+
 You can now navigate to 'localhost:5000/' to access the app.
