@@ -55,19 +55,15 @@ python model.py
 ```
 
 
-Run the app:
-
-```
-python server.py
-```
-
-You can now navigate to 'localhost:5000/' to access the app.
-
-
 ## <a name="start"></a>Sart & Watch
 
     $ npm start
-
-## Simple build for production
-
-    $ npm run build
+    
+    In another terminal:
+    ```
+    cd NDS-React-app
+    source env/bin/activate
+    cd src/client
+    python server.py
+    ```
+You can now navigate to 'localhost:5000/' to access the app.
