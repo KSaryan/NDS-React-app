@@ -4,7 +4,8 @@
 ## Contents
 * [Technologies](#technologies)
 * [Requirements](#requirements)
-* [Installation](#install)
+* [Installation](#installation)
+* [Start & Watch](#start)
 
 ## <a name="technologies"></a>Technologies
 <b>Frontend:</b> React, JavaScript, jQuery, AJAX<br/>
@@ -62,12 +63,7 @@ python server.py
 You can now navigate to 'localhost:5000/' to access the app.
 
 
-
-### Configure app
-
-Copy `config.json` to `config.json` then edit it with the url where you have setup.
-
-## Start & watch
+## <a name="start"></a>Sart & Watch
 
     $ npm start
 
