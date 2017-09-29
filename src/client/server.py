@@ -89,7 +89,6 @@ def show_current_needs():
                  'text': need.need_description, 
                  'donated': False} for need in needs]
     result = {'needs': needs}
-    print result
     return jsonify(result)
 
 
@@ -101,6 +100,8 @@ def donate():
     need = Need.query.get(need_id)
     need.donated = True
     db.session.commit()
+    data = {'success': True}
+    return jsonify(data)
 
 @app.route('/login.json')
 def login():

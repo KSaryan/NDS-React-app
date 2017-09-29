@@ -4,7 +4,6 @@ import {Button} from './button';
 
 export class Need extends React.Component{
 	render(){
-		alert(this.props.needs);
 		if (this.props.needs == 'none'){
 				return (<h3>No Current Needs</h3>)
 			}else{

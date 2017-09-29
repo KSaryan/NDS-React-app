@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Display } from './display';
 import { Input } from './input.js';
 import {Need} from './need.js';
@@ -17,23 +18,24 @@ export class NeedsPage extends React.Component{
 	    this.addNeed= this.addNeed.bind(this);
 	    this.getNeeds = this.getNeeds.bind(this);
 	    this.displayNeeds = this.displayNeeds.bind(this);
-  }
+  	}
 
-  displayNeeds(results){
-    this.setState({needs: results.needs});
-  }
+ 	displayNeeds(response){
+    	this.setState({needs: response.data.needs});
+  	}
   
-  getNeeds(){
-  $.get('/get_needs.json', this.displayNeeds);
-  }
+  	getNeeds(){
+  		axios.get('/get_needs.json').then(this.displayNeeds);
+  	}
+  
 
-  componentWillMount() {
+  	componentWillMount() {
       this.getNeeds();
-  }
+  	}
 
-  addNeed(src, text, display){ 
-    this.setState({src: src, "text": text, display: display})
-  }
+  	addNeed(src, text, display){ 
+    	this.setState({src: src, "text": text, display: display})
+  	}
 	
 	render(){
 		return(
