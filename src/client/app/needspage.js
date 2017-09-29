@@ -12,8 +12,7 @@ export class NeedsPage extends React.Component{
 	    this.state = {text:'', 
 	                  src:'', 
 	                  display: 'none',
-	                  needs: [{text:"", src:''}, 
-	                         {text:"", src:''}]};
+	                  needs: 'none'};
 
 	    this.addNeed= this.addNeed.bind(this);
 	    this.getNeeds = this.getNeeds.bind(this);

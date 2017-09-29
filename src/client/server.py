@@ -66,10 +66,13 @@ def save_need():
 def show_needs():
     """Get all needs"""
     needs = Need.query.all()
-    needs = [{'need_id': need.need_id, 
-              'src': need.need_src, 
-              'text': need.need_description, 
-              'donated': need.donated} for need in needs]
+    if not needs:
+        needs = 'none'
+    else:
+        needs = [{'need_id': need.need_id, 
+                  'src': need.need_src, 
+                  'text': need.need_description, 
+                  'donated': need.donated} for need in needs]
     result = {'needs': needs}
     return jsonify(result)
 
@@ -78,11 +81,15 @@ def show_needs():
 def show_current_needs():
     """Get all needs"""
     needs = Need.query.filter_by(donated=False).all()
-    needs = [{'need_id': need.need_id, 
-             'src': need.need_src, 
-             'text': need.need_description, 
-             'donated': False} for need in needs]
+    if not needs:
+        needs='none'
+    else:
+        needs = [{'need_id': need.need_id, 
+                 'src': need.need_src, 
+                 'text': need.need_description, 
+                 'donated': False} for need in needs]
     result = {'needs': needs}
+    print result
     return jsonify(result)
 
 
