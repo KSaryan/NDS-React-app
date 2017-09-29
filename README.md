@@ -8,7 +8,7 @@ This a practice app I made in order to get more comfortable with React. It is a 
 * [Start & Watch](#start)
 
 ## <a name="technologies"></a>Technologies
-<b>Frontend:</b> React, JavaScript, jQuery, AJAX<br/>
+<b>Frontend:</b> React, JavaScript, axios <br/>
 <b>Backend:</b> Python, Flask, PostgreSQL, SQLAlchemy<br/>
 
 
