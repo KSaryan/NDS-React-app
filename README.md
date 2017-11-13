@@ -17,7 +17,7 @@ This a practice app I made in order to get more comfortable with React. It is a 
 
 For development, you will need Node.js installed on your environement.
 
-Also, you will need to install PostgreSQL (Mac OSX)
+Also, you will need to install [PostgreSQL (Mac OSX)](https://www.postgresql.org/download/macosx/)
 
 
 ## <a name="installation"></a>Installation
