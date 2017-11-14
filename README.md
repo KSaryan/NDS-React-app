@@ -27,12 +27,11 @@ Clone or fork this repo:
 ```
 https://github.com/KSaryan/NDS-React-app
 ```
-```
- cd NDS-React-app
-```
+
 Create and activate a virtual environment inside your NDS-React-app directory:
 
 ```
+cd NDS-React-app
 virtualenv env
 source env/bin/activate
 ```
