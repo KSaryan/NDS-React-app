@@ -59,7 +59,7 @@ python model.py
 
 ## <a name="start"></a>Sart & Watch
 ```
-npm start
+npm run dev
 ```
 
 In another terminal:
