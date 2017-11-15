@@ -9,8 +9,8 @@ This a practice app I made in order to get more comfortable with React. It is a 
 * [To Do](#todo)
 
 ## <a name="technologies"></a>Technologies
-<b>Frontend:</b> React, JavaScript, axios <br/>
-<b>Backend:</b> Python, Flask, PostgreSQL, SQLAlchemy<br/>
+<b>Frontend:</b> React, React Router, JavaScript, axios <br/>
+<b>Backend:</b> Python, Flask, PostgreSQL, SQLAlchemy <br/>
 
 
 ## <a name="requirements"></a>Requirements
