@@ -1,14 +1,15 @@
 # React App for Next Door Shelter
-This a practice app I made in order to get more comfortable with React. It is a mock donation site for Next Door Shelter, where people can come see what the shelter needs and sign up to donate those items, and employees can add items they need for the shelter. Obviously, it had not been styled. 
+This a practice app I made in order to get more comfortable with React. It is a mock donation site for Next Door Shelter, where people can come see what the shelter needs and sign up to donate those items, and employees can add items they need for the shelter. Obviously, it has not been styled. 
 
 ## Contents
 * [Technologies](#technologies)
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Start & Watch](#start)
+* [To Do](#todo)
 
 ## <a name="technologies"></a>Technologies
-<b>Frontend:</b> React, JavaScript, jQuery, AJAX<br/>
+<b>Frontend:</b> React, JavaScript, axios <br/>
 <b>Backend:</b> Python, Flask, PostgreSQL, SQLAlchemy<br/>
 
 
@@ -16,7 +17,7 @@ This a practice app I made in order to get more comfortable with React. It is a 
 
 For development, you will need Node.js installed on your environement.
 
-Also, you will need to install PostgreSQL (Mac OSX)
+Also, you will need to install [PostgreSQL (Mac OSX)](https://www.postgresql.org/download/macosx/)
 
 
 ## <a name="installation"></a>Installation
@@ -30,6 +31,7 @@ https://github.com/KSaryan/NDS-React-app
 Create and activate a virtual environment inside your NDS-React-app directory:
 
 ```
+cd NDS-React-app
 virtualenv env
 source env/bin/activate
 ```
@@ -57,7 +59,7 @@ python model.py
 
 ## <a name="start"></a>Sart & Watch
 ```
-npm start
+npm run dev
 ```
 
 In another terminal:
@@ -69,3 +71,10 @@ python server.py
 ```
 
 You can now navigate to 'localhost:5000/' to access the app.
+
+## <a name="todo"></a>To Do
+
+- [ ] Styling 
+- [ ] Remove preview button/Have it autofill the div
+- [ ] Remove some repetition
+- [ ] Switch axios to fetch - for practice
