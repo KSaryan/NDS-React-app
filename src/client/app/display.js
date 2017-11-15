@@ -10,15 +10,16 @@ export class Display extends React.Component {
 
 	successFunction(){
 		alert("Saved");
-		this.props.addNeed('', '', 'none')
+		this.props.updateNeed('text', '', 'none');
+		this.props.updateNeed('src', '', 'none');
 		this.props.getNeeds();
 	}
 
 	handleSave(e){
 		
 		e.preventDefault();
-		const data = {src: this.props.src, text: this.props.text};     
-		$.get('/save_need.json', data, this.successFunction);
+		let data = {src: this.props.src, text: this.props.text};     
+		$.post('/save_need.json', data, this.successFunction);
 	}
 
   componentWillReceiveProps(nextProps){

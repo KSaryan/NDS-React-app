@@ -3,7 +3,7 @@ import React from 'react';
 export class Input extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {text:'', src:''}
+		// this.state = {text:'', src:''}
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSave = this.handleSave.bind(this);
 	}
@@ -11,7 +11,8 @@ export class Input extends React.Component{
 	handleChange(e){
 		let name = e.target.name;
 		let value= e.target.value;
-		this.setState({[name]:value});
+		// this.setState({[name]:value});
+		this.props.updateNeed(name, value, 'inline-block');
 	}
 
 	handleSave(e){
@@ -30,7 +31,6 @@ export class Input extends React.Component{
 					Add an image
 					<input type='text' name="src"  id="src" onChange={this.handleChange}/>
 				</label><br />
-				<input type= 'submit' value='Preview'  onClick={this.handleSave}/>
 			</form>
 		)
 

@@ -15,47 +15,20 @@ app.secret_key = "ABC"
 
 
 
-# def login_required(f):
-#     @wraps(f)
-#     def decorated_function(*args, **kwargs):
-#         if g.current_user is None:
-#             flash("Log in to access")
-#             return redirect('/')
-#         return f(*args, **kwargs)
-#     return decorated_function
-
-
-# @app.before_request
-# def pre_process_all_requests():
-#     """Setup the request context"""
-
-#     user_id = session.get('user_id')
-#     if user_id:
-#         g.current_user = User.query.get(user_id)
-#         g.logged_in = True
-#         g.email = g.current_user.email
-#         g.user_id = g.current_user.user_id
-#         g.phone = g.current_user.phone
-#     else:
-#         g.logged_in = False
-#         g.current_user = None
-#         g.email = None
-
-
 @app.route('/')
 def homepage():
     """Displays homepage"""
     return render_template('index.html')
 
 
-@app.route('/save_need.json')
+@app.route('/save_need.json', methods=["POST"])
 def save_need():
     """Saves new need"""
-
-    src = request.args.get('src')
+    import pdb; pdb.set_trace()
+    src = request.form.get('src')
     if src == '':
         src = None
-    text = request.args.get('text')
+    text = request.form.get('text')
     need = Need(need_description=text, need_src=src)
     db.session.add(need)
     db.session.commit()
@@ -116,6 +89,11 @@ def login():
     else:
         result = {'success': 'False'}
     return jsonify(result)
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def redirect_all(path):
+    return redirect('/')
 
   
 if __name__ == "__main__":

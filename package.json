@@ -1,7 +1,7 @@
 {
   "name": "react-hello-world",
   "version": "1.0.0",
-  "description": "",
+  "description": "This a practice app I made in order to get more comfortable with React. It is a mock donation site for Next Door Shelter, where people can come see what the shelter needs and sign up to donate those items, and employees can add items they need for the shelter. Obviously, it had not been styled.",
   "main": "index.js",
   "scripts": {
     "dev": "webpack -d --watch",
@@ -21,5 +21,14 @@
     "react-router-dom": "^4.2.2",
     "react-router-native": "^4.2.0",
     "webpack": "^3.6.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSaryan/NDS-React-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSaryan/NDS-React-app/issues"
+  },
+  "homepage": "https://github.com/KSaryan/NDS-React-app#readme"
 }

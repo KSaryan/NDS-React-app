@@ -15,7 +15,7 @@ export class NeedsPage extends React.Component{
 	                  display: 'none',
 	                  needs: 'none'};
 
-	    this.addNeed= this.addNeed.bind(this);
+	    this.updateNeed= this.updateNeed.bind(this);
 	    this.getNeeds = this.getNeeds.bind(this);
 	    this.displayNeeds = this.displayNeeds.bind(this);
   	}
@@ -33,8 +33,13 @@ export class NeedsPage extends React.Component{
       this.getNeeds();
   	}
 
-  	addNeed(src, text, display){ 
-    	this.setState({src: src, "text": text, display: display})
+  	updateNeed(name, value, display){ 
+  		if (name == "text"){
+    		this.setState({text: value, display: display});
+    	}else{
+    		this.setState({src: value, display: display});
+    }
+    console.log(this.state)
   	}
 	
 	render(){
@@ -43,8 +48,8 @@ export class NeedsPage extends React.Component{
 				<Link to={'/donate'}>
                 	<h3> Donation Page </h3>
             	</Link>
-				<Input addNeed={this.addNeed}/>
-	            <Display addNeed={this.addNeed} src={this.state.src} text={this.state.text} display={this.state.display} getNeeds={this.getNeeds}/>
+				<Input updateNeed={this.updateNeed}/>
+	            <Display updateNeed={this.updateNeed} src={this.state.src} text={this.state.text} display={this.state.display} getNeeds={this.getNeeds}/>
 	            <h2> Previous Needs </h2>
 	            <h4> Grayed Items Have Already Been Dontaed </h4>
 	            <Need needs= {this.state.needs} styles={styles}/>
