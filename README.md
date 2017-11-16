@@ -9,8 +9,8 @@ This a practice app I made in order to get more comfortable with React. It is a 
 * [To Do](#todo)
 
 ## <a name="technologies"></a>Technologies
-<b>Frontend:</b> React, JavaScript, axios <br/>
-<b>Backend:</b> Python, Flask, PostgreSQL, SQLAlchemy<br/>
+<b>Frontend:</b> React, React Router, JavaScript, axios <br/>
+<b>Backend:</b> Python, Flask, PostgreSQL, SQLAlchemy <br/>
 
 
 ## <a name="requirements"></a>Requirements
@@ -75,6 +75,6 @@ You can now navigate to 'localhost:5000/' to access the app.
 ## <a name="todo"></a>To Do
 
 - [ ] Styling 
-- [ ] Remove preview button/Have it autofill the div
+- [X] Remove preview button/Have it autofill the div
 - [ ] Remove some repetition
 - [ ] Switch axios to fetch - for practice
