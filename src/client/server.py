@@ -24,7 +24,7 @@ def homepage():
 @app.route('/save_need.json', methods=["POST"])
 def save_need():
     """Saves new need"""
-    import pdb; pdb.set_trace()
+
     src = request.form.get('src')
     if src == '':
         src = None

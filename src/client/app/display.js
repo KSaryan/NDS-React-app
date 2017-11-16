@@ -23,19 +23,18 @@ export class Display extends React.Component {
 	}
 
   componentWillReceiveProps(nextProps){
-  if (nextProps !== this.props) {
+  	if (nextProps !== this.props) {
     this.setState({ text: nextProps.text, src: nextProps.src })
+  	}
   }
-}
-
   	render() {
     	return (
-      	<div id='display'>
-      		<div> {this.state.text} </div>
-        	<img src= {this.state.src} height="200px" />
-        	<form onSubmit={this.handleSave}>
-	        	<input type='submit' value='Save' style ={{display: this.props.display}} />
-        	</form>
+      	<div>
+      	  <div> {this.state.text} </div>
+          <img src= {this.state.src} height="200px" />
+          <form onSubmit={this.handleSave}>
+	        <input type='submit' value='Save' style ={{display: this.props.display}} />
+          </form>
         
       	</div>
     	);

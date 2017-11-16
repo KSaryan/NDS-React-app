@@ -8,6 +8,7 @@ export class DonationPage extends React.Component{
     super(props);
     this.state = {needs: [{text:"", src:''}, 
                   {text:"", src:''}]};
+    this.stylesBtn = { display: 'inline-block'};
     this.getNeeds = this.getNeeds.bind(this);
     this.displayNeeds = this.displayNeeds.bind(this);
     this.donateItem = this.donateItem.bind(this);
@@ -18,7 +19,7 @@ export class DonationPage extends React.Component{
   }
   
   getNeeds(){
-      axios.get('/get_current_needs.json').then(this.displayNeeds);
+    axios.get('/get_current_needs.json').then(this.displayNeeds);
   }
 
   donateItem(itemId){
@@ -27,17 +28,25 @@ export class DonationPage extends React.Component{
   }
 
   componentWillMount() {
-      this.getNeeds();
-    }
-
-    render(){
-      return(<div>
-              <Link to={'/login'}>
-                  <h3> Login </h3>
-              </Link>
-              <h1>Things We Need</h1>
-              <h2>Simply click donate to donate an item</h2>
-              <Need needs={this.state.needs} donateItem={this.donateItem} getNeeds ={this.getNeeds}/>
-            </div>)
-    }
+    this.getNeeds();
   }
+
+  render(){
+    let needs = []
+    for (let need of this.state.needs){
+      needs.push(<Need need={need} 
+                       donateItem={this.donateItem} 
+                       getNeeds ={this.getNeeds}
+                       stylesBtn={this.stylesBtn}/>)
+
+    }
+    return(<div>
+            <Link to={'/login'}>
+                <h3> Login </h3>
+            </Link>
+            <h1>Things We Need</h1>
+            <h2>Simply click donate to donate an item</h2>
+            <tbody>{needs}</tbody>
+          </div>)
+  }
+}
