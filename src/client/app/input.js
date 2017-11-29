@@ -12,7 +12,7 @@ export class Input extends React.Component{
 		let name = e.target.name;
 		let value= e.target.value;
 		// this.setState({[name]:value});
-		this.props.updateNeed(name, value, 'inline-block');
+		this.props.updateDisplay(name, value, 'inline-block');
 	}
 
 	handleSave(e){

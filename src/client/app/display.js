@@ -10,8 +10,8 @@ export class Display extends React.Component {
 
 	successFunction(){
 		alert("Saved");
-		this.props.updateNeed('text', '', 'none');
-		this.props.updateNeed('src', '', 'none');
+		this.props.updateDisplay('text', '', 'none');
+		this.props.updateDisplay('src', '', 'none');
 		this.props.getNeeds();
 	}
 
