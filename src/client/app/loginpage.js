@@ -22,8 +22,7 @@ export class LoginPage extends React.Component{
 
 	checkLogIn(name, password){
 		const data = {name: name, password: password};
-		$.get('/login.json', data, this.handleSuccess)
-
+		fetchToJSON('/login.json', method="GET", data).then(this.handleSuccess);
 	}
 
 	// shouldComponentUpdate(nextProps, nextState) {

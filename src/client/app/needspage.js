@@ -1,9 +1,10 @@
 import React from 'react';
-import axios from 'axios';
 import { Display } from './display';
 import { Input } from './input.js';
 import {Need} from './need.js';
 import {Link} from 'react-router-dom';
+import {Need} from './need.js';
+import {fetchToJSON} from './helpers.js';
 
 
 export class NeedsPage extends React.Component{
@@ -24,7 +25,7 @@ export class NeedsPage extends React.Component{
   	}
   
   	getNeeds(){
-  	  axios.get('/get_needs.json').then(this.displayNeeds);
+  	  fetchToJSON('/get_needs.json', method="GET").then(this.displayNeeds);
   	}
   
 

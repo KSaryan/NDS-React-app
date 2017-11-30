@@ -1,6 +1,5 @@
 import React from 'react';
 import {Need} from './need.js';
-import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 export class DonationPage extends React.Component{
@@ -19,12 +18,13 @@ export class DonationPage extends React.Component{
   }
   
   getNeeds(){
-    axios.get('/get_current_needs.json').then(this.displayNeeds);
+    fetchToJSON('/get_current_needs.json', method="GET").then(this.displayNeeds);
   }
 
   donateItem(itemId){
     const data = {itemId: itemId};
-    $.post('/donate_item', data, this.getNeeds);
+    fetchToJSON('/donate_item', method="POST", data).then(this.getNeeds);
+
   }
 
   componentWillMount() {

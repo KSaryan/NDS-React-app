@@ -19,7 +19,7 @@ export class Display extends React.Component {
 		
 		e.preventDefault();
 		let data = {src: this.props.src, text: this.props.text};     
-		$.post('/save_need.json', data, this.successFunction);
+		fetchToJSON('/save_need.json', method="POST", data).then(this.successFunction);
 	}
 
   componentWillReceiveProps(nextProps){
