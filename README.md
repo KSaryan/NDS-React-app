@@ -77,4 +77,4 @@ You can now navigate to 'localhost:5000/' to access the app.
 - [ ] Styling 
 - [X] Remove preview button/Have it autofill the div
 - [X] Remove some repetition
-- [ ] Switch axios to fetch - for practice
+- [X] Switch axios to fetch - for practice
