@@ -9,15 +9,14 @@ import bcrypt
 from model import db, connect_to_db, User, Need
 
 
-
 app = Flask(__name__)
 app.secret_key = "ABC"
-
 
 
 @app.route('/')
 def homepage():
     """Displays homepage"""
+    
     return render_template('index.html')
 
 
@@ -76,6 +75,7 @@ def donate():
     data = {'success': True}
     return jsonify(data)
 
+
 @app.route('/login.json')
 def login():
     """Get all needs"""
@@ -89,6 +89,7 @@ def login():
     else:
         result = {'success': 'False'}
     return jsonify(result)
+
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')

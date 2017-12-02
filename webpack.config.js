@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'src/client/static/js');
-var APP_DIR = path.resolve(__dirname, 'src/client/app');
+var BUILD_DIR = path.resolve(__dirname, 'static/js');
+var APP_DIR = path.resolve(__dirname, 'static/app');
 
 var config = {
   entry: APP_DIR + '/index.jsx',

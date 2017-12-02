@@ -3,7 +3,6 @@ import { Display } from './display';
 import { Input } from './input.js';
 import {Need} from './need.js';
 import {Link} from 'react-router-dom';
-import {Need} from './need.js';
 import {fetchToJSON} from './helpers.js';
 
 
