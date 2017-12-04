@@ -1,5 +1,6 @@
 import React from 'react';
 
+// form where shelter employees can input new needs
 export class Input extends React.Component{
 	constructor(props){
 		super(props);

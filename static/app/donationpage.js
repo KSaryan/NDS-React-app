@@ -3,6 +3,7 @@ import {Need} from './need.js';
 import {Link} from 'react-router-dom';
 import {fetchToJSON} from './helpers.js';
 
+// page that displays needs so users can donate
 export class DonationPage extends React.Component{
   constructor(props) {
     super(props);

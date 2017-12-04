@@ -9,6 +9,7 @@ export class Display extends React.Component {
 		this.successFunction = this.successFunction.bind(this);
 	}
 
+	// flashes saved message, empties diplay, calls get needs from needspage.js
 	successFunction(results){
 		alert("Saved");
 		this.props.updateDisplay('text', '', 'none');
@@ -16,6 +17,7 @@ export class Display extends React.Component {
 		this.props.getNeeds();
 	}
 
+	// saves new needs in database
 	handleSave(e){
 		
 		e.preventDefault();
@@ -23,11 +25,14 @@ export class Display extends React.Component {
 		fetchToJSON('/save_need.json', "POST", data).then(this.successFunction);
 	}
 
-  componentWillReceiveProps(nextProps){
-  	if (nextProps !== this.props) {
-    this.setState({ text: nextProps.text, src: nextProps.src })
-  	}
-  }
+	// updates state when props have changed
+	componentWillReceiveProps(nextProps){
+	  	if (nextProps !== this.props) {
+	    this.setState({ text: nextProps.text, src: nextProps.src })
+	  	}
+	  }
+
+
   	render() {
     	return (
       	<div>

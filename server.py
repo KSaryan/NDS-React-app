@@ -97,7 +97,7 @@ def login():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def redirect_all(path):
-    """redirects all paths to root"""
+    """Redirects all paths to root"""
 
     return redirect('/')
 

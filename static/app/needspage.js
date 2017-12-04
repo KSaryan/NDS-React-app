@@ -1,11 +1,11 @@
 import React from 'react';
 import { Display } from './display';
 import { Input } from './input.js';
-import {Need} from './need.js';
-import {Link} from 'react-router-dom';
-import {fetchToJSON} from './helpers.js';
+import { Need } from './need.js';
+import { Link } from 'react-router-dom';
+import { fetchToJSON } from './helpers.js';
 
-
+// page displaying needs shlter employess have inuted
 export class NeedsPage extends React.Component{
 	constructor(props) {
 	  super(props);
@@ -27,7 +27,7 @@ export class NeedsPage extends React.Component{
   	  fetchToJSON('/get_needs.json', "GET").then(this.displayNeeds);
   	}
   
-
+  	// gets newest needs before mounting
   	componentWillMount() {
       this.getNeeds();
   	}

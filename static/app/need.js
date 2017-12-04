@@ -2,6 +2,7 @@ import React from 'react';
 import {Button} from './button';
 
 
+// a single need
 export class Need extends React.Component{
 	
 	render(){
