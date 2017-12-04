@@ -71,6 +71,7 @@ python server.py
 ```
 
 You can now navigate to 'localhost:5000/' to access the app.
+The dummy username and password are NDS and Libris.
 
 ## <a name="todo"></a>To Do
 
