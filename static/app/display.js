@@ -1,4 +1,5 @@
 import React from 'react';
+import {fetchToJSON} from './helpers.js';
 
 export class Display extends React.Component {
 	constructor(props){
@@ -8,7 +9,7 @@ export class Display extends React.Component {
 		this.successFunction = this.successFunction.bind(this);
 	}
 
-	successFunction(){
+	successFunction(results){
 		alert("Saved");
 		this.props.updateDisplay('text', '', 'none');
 		this.props.updateDisplay('src', '', 'none');
@@ -18,8 +19,8 @@ export class Display extends React.Component {
 	handleSave(e){
 		
 		e.preventDefault();
-		let data = {src: this.props.src, text: this.props.text};     
-		fetchToJSON('/save_need.json', method="POST", data).then(this.successFunction);
+		let data = {src: this.props.src, text: this.props.text};    
+		fetchToJSON('/save_need.json', "POST", data).then(this.successFunction);
 	}
 
   componentWillReceiveProps(nextProps){

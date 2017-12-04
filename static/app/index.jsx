@@ -5,7 +5,7 @@ import {DonationPage} from './donationpage.js';
 import {HomePage} from './homepage.js';
 import {LoginPage} from './loginpage.js'
 
-
+{/* creates routes for each page */}
 class App extends React.Component {
 
   render() {

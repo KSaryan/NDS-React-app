@@ -1,8 +1,10 @@
 import React from 'react';
 import {LogIn} from './login.js';
 import {NeedsPage} from './needspage.js';
+import {fetchToJSON} from './helpers.js';
 
 
+// Login page for shelter employees
 export class LoginPage extends React.Component{
 	
 	constructor(props){
@@ -12,6 +14,7 @@ export class LoginPage extends React.Component{
 		this.checkLogIn = this.checkLogIn.bind(this);
 	}
 
+	// logs in user by changing state login
 	handleSuccess(results){
 		if(results.success == 'True'){
 			this.setState({login: true});
@@ -20,22 +23,13 @@ export class LoginPage extends React.Component{
 		}
 	}
 
+	// does fetch request to server to verify username and password
 	checkLogIn(name, password){
 		const data = {name: name, password: password};
-		fetchToJSON('/login.json', method="GET", data).then(this.handleSuccess);
+		fetchToJSON('/login.json', "GET", data).then(this.handleSuccess);
 	}
 
-	// shouldComponentUpdate(nextProps, nextState) {
- //    if (this.state == nextState) {
- //      return false;
- //    } else {
- //      alert("Okay fine I will update.")
- //      return true;
- //      this.render();
- //    }
- //  }
-
-
+	// renderd login form
 	render(){
 			if(this.state.login==false){
 				return(

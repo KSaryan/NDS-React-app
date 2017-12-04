@@ -1,5 +1,6 @@
 import React from 'react';
 
+{/* button for donating items */}
 export class Button extends React.Component{
 
 	constructor(props){

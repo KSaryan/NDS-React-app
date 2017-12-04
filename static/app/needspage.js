@@ -20,11 +20,11 @@ export class NeedsPage extends React.Component{
   	}
 
  	displayNeeds(response){
-      this.setState({needs: response.data.needs});
+      this.setState({needs: response.needs});
   	}
   
   	getNeeds(){
-  	  fetchToJSON('/get_needs.json', method="GET").then(this.displayNeeds);
+  	  fetchToJSON('/get_needs.json', "GET").then(this.displayNeeds);
   	}
   
 

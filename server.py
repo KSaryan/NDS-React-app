@@ -16,7 +16,7 @@ app.secret_key = "ABC"
 @app.route('/')
 def homepage():
     """Displays homepage"""
-    
+
     return render_template('index.html')
 
 
@@ -31,12 +31,14 @@ def save_need():
     need = Need(need_description=text, need_src=src)
     db.session.add(need)
     db.session.commit()
-    return "Done"
+    success = {"message": "success"}
+    return jsonify(success)
 
 
 @app.route('/get_needs.json')
 def show_needs():
     """Get all needs"""
+
     needs = Need.query.all()
     if not needs:
         needs = 'none'
@@ -51,7 +53,8 @@ def show_needs():
 
 @app.route('/get_current_needs.json')
 def show_current_needs():
-    """Get all needs"""
+    """Get current needs"""
+
     needs = Need.query.filter_by(donated=False).all()
     if not needs:
         needs='none'
@@ -66,7 +69,7 @@ def show_current_needs():
 
 @app.route('/donate_item', methods=["POST"])
 def donate():
-    """Get all needs"""
+    """Marks item as donated"""
 
     need_id = int(request.form.get('itemId'))
     need = Need.query.get(need_id)
@@ -78,7 +81,7 @@ def donate():
 
 @app.route('/login.json')
 def login():
-    """Get all needs"""
+    """Confirms user login info"""
 
     name = request.args.get('name')
     password = request.args.get('password')
@@ -94,6 +97,8 @@ def login():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def redirect_all(path):
+    """redirects all paths to root"""
+
     return redirect('/')
 
   

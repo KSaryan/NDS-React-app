@@ -2,9 +2,8 @@ import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 
-
+{/* homepage with links to other pages */}
 export class HomePage extends React.Component{
-
 
   render(){
     return(<div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Need} from './need.js';
 import {Link} from 'react-router-dom';
+import {fetchToJSON} from './helpers.js';
 
 export class DonationPage extends React.Component{
   constructor(props) {
@@ -14,16 +15,17 @@ export class DonationPage extends React.Component{
   }
 
   displayNeeds(response){
-    this.setState({needs: response.data.needs});
+    console.log(response.needs)
+    this.setState({needs: response.needs});
   }
   
   getNeeds(){
-    fetchToJSON('/get_current_needs.json', method="GET").then(this.displayNeeds);
+    fetchToJSON('/get_current_needs.json', "GET").then(this.displayNeeds);
   }
 
   donateItem(itemId){
     const data = {itemId: itemId};
-    fetchToJSON('/donate_item', method="POST", data).then(this.getNeeds);
+    fetchToJSON('/donate_item', "POST", data).then(this.getNeeds);
 
   }
 

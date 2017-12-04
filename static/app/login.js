@@ -9,6 +9,7 @@ export class LogIn extends React.Component{
 		this.handleSave = this.handleSave.bind(this);
 	}
 
+	// updates state as user types in info
 	handleChange(e){
 		let name = e.target.name;
 		let value= e.target.value;

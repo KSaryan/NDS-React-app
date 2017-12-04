@@ -3,7 +3,6 @@ import React from 'react';
 export class Input extends React.Component{
 	constructor(props){
 		super(props);
-		// this.state = {text:'', src:''}
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSave = this.handleSave.bind(this);
 	}
@@ -11,7 +10,6 @@ export class Input extends React.Component{
 	handleChange(e){
 		let name = e.target.name;
 		let value= e.target.value;
-		// this.setState({[name]:value});
 		this.props.updateDisplay(name, value, 'inline-block');
 	}
 

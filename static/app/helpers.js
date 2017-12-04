@@ -1,3 +1,6 @@
+'use strict';
+import React, { Component } from 'react';
+
 /** Add request parameters to a GET URL **/
 const makeGetURL = (url, params) => {
     let eUC = encodeURIComponent;
@@ -20,7 +23,7 @@ const objToFormData = (obj) =>{
 
 
 /** Fetch a JSON resource, returning a promise **/
-const fetchToJSON = (url, method="GET", params={}) => {
+export function fetchToJSON(url, method="GET", params={}) {
 
     //set the method
     let fetchOptions = {"method": method};
@@ -39,11 +42,7 @@ const fetchToJSON = (url, method="GET", params={}) => {
     //return a promise of JSON data
     return fetch(url, fetchOptions)
         .then(function (results) {
-            console.log("in then after fetch");
-            console.log(results);
             return results.json();
         });
 
 }
-
-export default fetchToJSON;
