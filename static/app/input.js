@@ -21,16 +21,18 @@ export class Input extends React.Component{
 
 	render(){
 		return(
+			<div className="container form-group">
 			<form >
-				<label>
-					What do you need?
-					<input type='text' name="text" id="text" onChange={this.handleChange}/>
-				</label><br />
+				<div className="form-group">
+				  <label>What do you need?</label>
+				  <input type='text' id="text" className="form-control" name="text" onChange={this.handleChange}/>
+				</div>
 				<label>
 					Add an image
 					<input type='text' name="src"  id="src" onChange={this.handleChange}/>
 				</label><br />
 			</form>
+			</div>
 		)
 
 	}

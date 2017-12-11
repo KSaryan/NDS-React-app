@@ -12,7 +12,7 @@ export class NeedsPage extends React.Component{
 	  this.state = {text:'', 
 	                src:'',
 	                display: 'none',
-	                needs: 'none'};
+	                needs: []};
 	  this.stylesBtn = { display: 'None'};
 	  this.updateDisplay= this.updateDisplay.bind(this);
 	  this.getNeeds = this.getNeeds.bind(this);
@@ -41,22 +41,16 @@ export class NeedsPage extends React.Component{
   	}
 	
 	render(){
-	  let needs = []
-	  var opacity;
-	  // setting opacity so donated items look grayed out
-	  for (let need of this.state.needs){
-	  	if(need.donated==true){
-	  	  opacity = .2;
-	  	}else{
-	  	  opacity = 1;
-	  	}
-	  	// making array of Need components
-	  	needs.push(<Need need={need} 
-	  					 donateItem={this.donateItem} 
-	  					 getNeeds ={this.getNeeds} 
-	  					 opacity={opacity} 
-	  					 stylesBtn={this.stylesBtn}/>)
-		}
+	  let needs = this.state.needs
+	  let listNeeds = needs.map((need) =>
+		<li key={need.need_id}>
+	    <Need need={need} 
+	        donateItem={this.donateItem} 
+            getNeeds ={this.getNeeds}
+            stylesBtn={this.stylesBtn}/>
+	     </li>
+	  );
+
 	  return(
 		<div>
 		  <Link to={'/donate'}>
@@ -66,7 +60,7 @@ export class NeedsPage extends React.Component{
 	      <Display updateDisplay={this.updateDisplay} src={this.state.src} text={this.state.text} display={this.state.display} getNeeds={this.getNeeds}/>
 	      <h2> Previous Needs </h2>
 	      <h4> Grayed Items Have Already Been Dontaed </h4>
- 		  <tbody>{needs}</tbody>	        
+ 		  <ul>{listNeeds}</ul>        
  		</div>
 		)
 	}

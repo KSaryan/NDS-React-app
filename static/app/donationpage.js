@@ -16,7 +16,6 @@ export class DonationPage extends React.Component{
   }
 
   displayNeeds(response){
-    console.log(response.needs)
     this.setState({needs: response.needs});
   }
   
@@ -34,22 +33,25 @@ export class DonationPage extends React.Component{
     this.getNeeds();
   }
 
-  render(){
-    let needs = []
-    for (let need of this.state.needs){
-      needs.push(<Need need={need} 
-                       donateItem={this.donateItem} 
-                       getNeeds ={this.getNeeds}
-                       stylesBtn={this.stylesBtn}/>)
 
-    }
+  render(){
+    const needs = this.state.needs
+    let listNeeds = needs.map((need) =>
+      <li key={need.need_id}>
+      <Need need={need} 
+            donateItem={this.donateItem} 
+            getNeeds ={this.getNeeds}
+            stylesBtn={this.stylesBtn}/>
+      </li>
+    );
+
     return(<div>
             <Link to={'/login'}>
                 <h3> Login </h3>
             </Link>
             <h1>Things We Need</h1>
             <h2>Simply click donate to donate an item</h2>
-            <tbody>{needs}</tbody>
+            <ul>{listNeeds}</ul>
           </div>)
   }
 }

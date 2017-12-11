@@ -1,11 +1,8 @@
 from flask import jsonify
 from flask import (Flask, render_template, redirect, request, flash,
                    session, url_for, g)
-# from flask_debugtoolbar import DebugToolbarExtension
 from sqlalchemy import update
 import json
-# from datetime import datetime, timedelta, date
-import bcrypt
 from model import db, connect_to_db, User, Need
 
 
