@@ -1,7 +1,7 @@
 'use strict';
 import React, { Component } from 'react';
 
-/** Add request parameters to a GET URL **/
+// adds request parameters to a GET URL
 const makeGetURL = (url, params) => {
     let eUC = encodeURIComponent;
     let queryString = Object.keys(params)
@@ -11,7 +11,7 @@ const makeGetURL = (url, params) => {
 }
 
 
-/** Convert a plain object into a FormData object **/
+// converts a plain object into a FormData object
 const objToFormData = (obj) =>{
     
     let formData = new FormData();
@@ -22,7 +22,7 @@ const objToFormData = (obj) =>{
 }
 
 
-/** Fetch a JSON resource, returning a promise **/
+// fetches a JSON resource, returning a promise
 export function fetchToJSON(url, method="GET", params={}) {
 
     //set the method

@@ -4,7 +4,7 @@ import {NeedsPage} from './needspage.js';
 import {fetchToJSON} from './helpers.js';
 
 
-// Login page for shelter employees
+// login page for shelter employees
 export class LoginPage extends React.Component{
 	
 	constructor(props){

@@ -9,6 +9,7 @@ export class Need extends React.Component{
 	  let opacity;
 	  let need = this.props.need
 
+	  // set opacity based on whether already donated
 	  if(need.donated==true){
 	  	 opacity = .2;
 	  }else{

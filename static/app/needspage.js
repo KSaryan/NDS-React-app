@@ -22,7 +22,8 @@ export class NeedsPage extends React.Component{
  	displayNeeds(response){
       this.setState({needs: response.needs});
   	}
-  
+  	
+  	// fetching all needs
   	getNeeds(){
   	  fetchToJSON('/get_needs.json', "GET").then(this.displayNeeds);
   	}
@@ -32,6 +33,7 @@ export class NeedsPage extends React.Component{
       this.getNeeds();
   	}
 
+  	// updates diplay area
   	updateDisplay(name, value, display){ 
   	  if (name == "text"){
         this.setState({text: value, display: display});

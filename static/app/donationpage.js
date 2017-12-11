@@ -19,23 +19,26 @@ export class DonationPage extends React.Component{
     this.setState({needs: response.needs});
   }
   
+  // fetching current needs
   getNeeds(){
     fetchToJSON('/get_current_needs.json', "GET").then(this.displayNeeds);
   }
 
+  // saves donated item as donated
   donateItem(itemId){
     const data = {itemId: itemId};
     fetchToJSON('/donate_item', "POST", data).then(this.getNeeds);
 
   }
 
+  // get current needs before component mounts
   componentWillMount() {
     this.getNeeds();
   }
 
-
   render(){
-    const needs = this.state.needs
+    let needs = this.state.needs
+    // creates array of needs
     let listNeeds = needs.map((need) =>
       <li key={need.need_id}>
       <Need need={need} 

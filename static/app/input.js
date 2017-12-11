@@ -14,6 +14,7 @@ export class Input extends React.Component{
 		this.props.updateDisplay(name, value, 'inline-block');
 	}
 
+	// saves need
 	handleSave(e){
 		e.preventDefault();
 		this.props.addNeed(this.state.src, this.state.text, 'inline-block');

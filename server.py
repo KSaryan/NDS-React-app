@@ -34,7 +34,7 @@ def save_need():
 
 @app.route('/get_needs.json')
 def show_needs():
-    """Get all needs"""
+    """Gets all needs"""
 
     needs = Need.query.all()
     if not needs:
@@ -50,7 +50,7 @@ def show_needs():
 
 @app.route('/get_current_needs.json')
 def show_current_needs():
-    """Get current needs"""
+    """Gets current needs"""
 
     needs = Need.query.filter_by(donated=False).all()
     if not needs:
