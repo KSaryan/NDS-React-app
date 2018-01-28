@@ -32,7 +32,11 @@ Create and activate a virtual environment inside your NDS-React-app directory:
 
 ```
 cd NDS-React-app
+```
+```
 virtualenv env
+```
+```
 source env/bin/activate
 ```
 
