@@ -50,9 +50,6 @@ Set up the database:
 createdb naxtdoorneeds
 ```
 ```
-cd src/client
-```
-```
 python model.py
 ```
 
@@ -65,8 +62,11 @@ npm run dev
 In another terminal:
 ```
 cd NDS-React-app
+```
+```
 source env/bin/activate
-cd src/client
+```
+```
 python server.py
 ```
 
